@@ -83,4 +83,11 @@ SELECT yr, subject, winner
  select winner from nobel where winner LIKE 'John%'
  select yr,subject,winner from nobel where subject = 'Physics' AND yr =1980  OR subject = 'Chemistry' AND yr= 1984
  select * from nobel where yr =1980 and subject NOT IN ('Chemistry','Medicine')
- 
+ select * from nobel where subject = 'Medicine' and yr < 1910 or subject = 'Literature' AND yr >= 2004
+ select * from nobel where winner LIKE 'PETER GRÜNBERG'
+ select * from nobel where winner LIKE 'EUGENE O\'NEILL'
+ select winner,yr,subject from nobel where winner LIKE 'Sir%' 
+ SELECT winner, subject
+  FROM nobel
+ WHERE yr=1984
+ ORDER BY subject in ('Chemistry','Physics') asc,subject,winner 

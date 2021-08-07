@@ -39,7 +39,7 @@ SELECT name FROM world
  SELECT capital,name
   FROM world
  WHERE capital LIKE concat('%',name,'%')
- 
+
  SELECT capital,name
   FROM world
  WHERE capital LIKE concat(name,'_','%')
@@ -66,3 +66,21 @@ SELECT name,capital
  SELECT name
    FROM world
 WHERE name LIKE '%a%' and name LIKE '%e%' and name LIKE '%i%' and name LIKE '%o%' and name LIKE '%u%' and name not LIKE '%d%' and name not LIKE '%g%' 
+
+Lesson 2 select from nobel
+SELECT yr, subject, winner
+  FROM nobel
+ WHERE yr = 1950
+ SELECT winner
+  FROM nobel
+ WHERE yr = 1962
+   AND subject = 'Literature'
+   select yr,subject from nobel where winner = 'Albert Einstein' 
+   select  winner from nobel where subject = 'Peace' AND yr >= 2000 
+   select yr,subject,winner from nobel where subject = 'Literature' AND yr >= 1980 AND yr <= 1989
+   SELECT * FROM nobel
+ WHERE winner in ('Theodore Roosevelt','Woodrow Wilson','Jimmy Carter','Barack Obama')
+ select winner from nobel where winner LIKE 'John%'
+ select yr,subject,winner from nobel where subject = 'Physics' AND yr =1980  OR subject = 'Chemistry' AND yr= 1984
+ select * from nobel where yr =1980 and subject NOT IN ('Chemistry','Medicine')
+ 
